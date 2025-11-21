@@ -16,7 +16,7 @@ jobs:
       matrix: ${{ steps.get_versions.outputs.matrix }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Get PostgreSQL Versions
         id: get_versions
@@ -31,7 +31,7 @@ jobs:
         version: ${{ fromJson(needs.get_versions.outputs.matrix).versions }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
